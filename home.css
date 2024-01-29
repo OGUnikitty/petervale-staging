@@ -5,6 +5,7 @@
 body{
     background-color: var(--complementary);
     min-height: 100vh;
+    margin: 1rem;
 }
 
 *{
@@ -15,10 +16,11 @@ body{
     list-style: none;
     text-decoration: none;
     --primary : #EE0000;
-    --secondary : #2522cc;
+    --secondary : #16148f;
     --complementary : #F5F5F5;
     --tertiary : rgb(26, 2, 2);
     --timing : cubic-bezier(0.16, 0.885, 0.32, 1.275); 
+    font-size: 15px;
 
 
 }
@@ -71,15 +73,15 @@ body{
 }
 
 .navbar ul li a:hover{
-    color: var(--secondary);
+    color: var(--primary);
     background: var(--tertiary);
     transform: scaleX(1.01);
     transition: 200ms ;
 }
 
 .navbar ul li a.active {
-    color: var(--tertiary);
-    background: var(--secondary);
+    color: var(--secondary);
+    background: var(--primary);
 
 }
 
@@ -161,7 +163,18 @@ body{
   .navbar::-webkit-scrollbar-thumb {
     background: var(--secondary); /* Thumb background color */
   }
-
+  body::-webkit-scrollbar {
+    width: 0.25rem; /* Scrollbar width */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: transparent; /* Track background color */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: var(--secondary); /* Thumb background color */
+    border-radius: 1rem;
+  }
   .printer-shop {
     background-image: url(images/background-texture.jpg); /* Optional background image with subtle texture */
     background-position: center;
@@ -205,11 +218,13 @@ body{
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
   }
   
   .printer-shop .call-to-action a.button:hover {
-    background-color: #289BD0;
+    background-color: var(--tertiary);
+    transform: scale(1.25);
+    transition: 200ms var(--timing);
   }
   
   .printer-shop .services {
@@ -218,13 +233,18 @@ body{
     justify-content: space-between;
     margin-top: 50px;
   }
+
+  .printer-shop .services .service:hover {
+      transform: scale(1.05);
+      transition: 200ms var(--timing);
+  }
   
   .printer-shop .services .service {
     width: 30%;
     text-align: center;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
   
   .printer-shop .services .service img {
