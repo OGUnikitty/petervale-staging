@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petervale Printing</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="shortcut icon" href="images/logo-01.svg" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <div class="logo"><a href="#"><img src="./images/logo long.svg" alt=""></a></div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="" class="active">ORDER</a></li>
+                <li><a href="" class="">Products</a></li>
+                <li><a href="" class="">About Us</a></li>
+                <li><a href="" class="">Account</a></li>
+            </ul>
+        </nav>
+        </header>
+        
+        <section class="printer-shop">
+            <div class="container">
+              <header>
+                <img src="images/banner.svg" alt="Printer Shop Banner">
+                <h1>Bring Your Ideas to Life with Professional Printing</h1>
+                <p>From business cards to banners, we've got you covered.</p>
+              </header>
+          
+              <div class="call-to-action">
+                <h2>Order Your Prints Today!</h2>
+                <a href="#" class="button">Get a Quote</a>
+              </div>
+          
+              <div class="services">
+                <div class="service">
+                  <img src="./images/business-cards.png" alt="Business Cards">
+                  <h3>Business Cards</h3>
+                  <p>Make a lasting impression with high-quality business cards.</p>
+                </div>
+                <div class="service">
+                  <img src="images/poster+flyer.png" alt="Posters">
+                  <h3>Posters & Flyers</h3>
+                  <p>Spread the word with eye-catching posters and flyers.</p>
+                </div>
+                <div class="service">
+                  <img src="images/banners.jpg" alt="Banners">
+                  <h3>Banners</h3>
+                  <p>Make a bold statement with large-format banners.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const hamburger = document.querySelector(".hamburger");
+            const navBar = document.querySelector(".navbar");
+
+            hamburger.addEventListener("click", function() {
+                navBar.classList.toggle("active");
+            });
+        });
+    </script>
+</body>
+</html>
