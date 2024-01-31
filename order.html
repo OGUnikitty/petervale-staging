@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an order - Petervale Printing</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="shortcut icon" href="images/logo-01.svg" type="image/x-icon">
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+<!--navbar start-->
+<!--navbar end-->
+
+
+<body>
+  <div id="upload-container">
+
+    <div class="file-group">
+      <div id="file-group-header">
+        <h1>Upload Files and Get a Price Quotation</h1>
+      </div>
+      <div id="options">
+        <input type="file" id="file-input">
+        <select id="paper-size">
+          <option value="A4">A4</option>
+          <option value="Letter">Letter</option>
+          </select>
+              <input type="number" id="copies" min="1" value="1" placeholder="Number of Copies">
+              <select id="color-mode">
+                <option value="black">Black & White</option>
+                <option value="color">Color</option>
+              </select>
+              <select id="layout">
+                <option value="portrait">Portrait</option>
+                <option value="landscape">Landscape</option>
+              </select>
+              <label for="double-sided">Double-Sided:</label>
+              <input type="checkbox" id="double-sided">
+              <textarea id="instructions" placeholder="Additional Instructions"></textarea>
+              
+          
+
+      </div>
+
+      <div id="unit-price-container">
+        <p >Unit Price:R<span id="unit-price">0</span></p></div>
+      
+    </div>
+
+  </div>
+
+  <button id="add-file">Add Another File</button>
+
+
+  <div id="price-breakdown">
+    <h2>Price Breakdown</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Quantity</th>
+          <th>Unit Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="price-table">
+        </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">Grand Total:</td>
+          <td id="grand-total">0</td>
+        </tr>
+      </tfoot>
+    </table>
+    <button id="confirm-order">Confirm Order</button>
+  </div>
+  <script src="order.js"></script>
+
+
+    
+</body>
+</html>
