@@ -47,28 +47,38 @@ function addFileGroup() {
   newFileGroup.classList.add('file-group');
   // ... (add input fields, dropdown, textarea, etc. to the new group)
   newFileGroup.innerHTML = `
-  <h1>Upload More Files and Get a Price Quotation</h1>
   <div class="file-group">
-    <input type="file" id="file-input">
-    <select id="paper-size">
-      <option value="A4">A4</option>
-      <option value="Letter">Letter</option>
-      </select>
-          <input type="number" id="copies" min="1" value="1" placeholder="Number of Copies">
-          <select id="color-mode">
-            <option value="black">Black & White</option>
-            <option value="color">Color</option>
+      <div id="file-group-header">
+        <h1>Upload More Files and Get a Price Quotation</h1>
+      </div>
+      <div id="options">
+        <input type="file" id="file-input">
+        <select id="paper-size">
+          <option value="A4">A4</option>
+          <option value="Letter">Letter</option>
           </select>
-          <select id="layout">
-            <option value="portrait">Portrait</option>
-            <option value="landscape">Landscape</option>
-          </select>
-          <label for="double-sided">Double-Sided:</label>
-          <input type="checkbox" id="double-sided">
+              <input type="number" id="copies" min="1" value="1" placeholder="Number of Copies">
+              <select id="color-mode">
+                <option value="black">Black & White</option>
+                <option value="color">Color</option>
+              </select>
+              <select id="layout">
+                <option value="portrait">Portrait</option>
+                <option value="landscape">Landscape</option>
+              </select>
+              <label for="double-sided">Double-Sided:</label>
+              <input type="checkbox" id="double-sided">
+              <textarea id="instructions" placeholder="Additional Instructions"></textarea>
+              
+          
 
-        
-    <textarea id="instructions" placeholder="Additional Instructions"></textarea>
-    <p>Unit Price: <span id="unit-price">0</span></p>
+      </div>
+
+      <div id="unit-price-container">
+        <p >Unit Price:R<span id="unit-price">0</span></p>
+      </div>
+      
+    </div>
   `
   uploadContainer.appendChild(newFileGroup);
 }
