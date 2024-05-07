@@ -1,0 +1,18 @@
+.card img{
+    width: inherit;
+    image-rendering:optimizeSpeed;
+
+    
+}
+
+.card{
+    width: 20vw;
+    height: 32vw;
+    border: 1px solid var(--tertiary);
+    border-radius: 20px;
+}
+
+#card-header{
+    height: 30%;
+    
+}

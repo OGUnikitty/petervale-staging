@@ -103,3 +103,56 @@ function updatePrice(fileGroup) {
 // ... (implement event listeners to handle user interactions and price calculation)
 
 console.log("alive")
+
+
+
+
+const confirmOrderBtn = document.getElementById('confirm-order');
+
+confirmOrderBtn.addEventListener('click', () => {
+  const fileGroups = document.querySelectorAll('.file-group');
+  const allData = [];
+
+  fileGroups.forEach(fileGroup => {
+    const data = fetchAndPrepareData(fileGroup);
+    allData.push(data);
+  });
+
+  // Send the bundled data to the server
+  fetch('/your-server-endpoint', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(allData)
+  })
+  .then(response => {
+    // Handle server response
+  })
+  .catch(error => {
+    // Handle errors
+  });
+});
+
+// Helper function to fetch and prepare data from a single file group
+function fetchAndPrepareData(fileGroup) {
+  const fileInput = fileGroup.querySelector('#file-input');
+  const paperSize = fileGroup.querySelector('#paper-size').value;
+  const copies = fileGroup.querySelector('#copies').value;
+  const colorMode = fileGroup.querySelector('#color-mode').value;
+  const layout = fileGroup.querySelector('#layout').value;
+  const doubleSided = fileGroup.querySelector('#double-sided').checked;
+  const instructions = fileGroup.querySelector('#instructions').value;
+
+  const file = fileInput.files ? fileInput.files[0] : null;
+
+  return {
+    file: file,
+    paperSize: paperSize,
+    copies: copies,
+    colorMode: colorMode,
+    layout: layout,
+    doubleSided: doubleSided,
+    instructions: instructions
+  };
+}
