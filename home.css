@@ -8,6 +8,10 @@ body{
     margin: 1rem;
 }
 
+body.overflow_hidden{
+  overflow-x: hidden;
+}
+
 *{
     font-family: Bahnschrift;
     margin: 0;
@@ -19,7 +23,8 @@ body{
     --secondary : #16148f;
     --complementary : #F5F5F5;
     --tertiary : rgb(26, 2, 2);
-    --timing : cubic-bezier(0.16, 0.885, 0.32, 1.275); 
+    --timing : cubic-bezier(0.16, 0.885, 0.32, 1.1);
+    --smooth-Timing : cubic-bezier(0,.19,1,.86); 
     font-size: 15px;
 
 
@@ -29,11 +34,10 @@ body{
 .header{
     width: 100%;
     height: 75px;
-    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 100px;
+    padding: 0 2rem;
 
 }
 
@@ -41,6 +45,8 @@ body{
     font-size: 2rem;
     font-weight: 700;
     color: var(--complementary);
+    margin-left: 0;
+    margin-right: 1rem;
 
 }
 
@@ -51,8 +57,15 @@ body{
 
 .logo:hover{
     filter: invert(100%);
+    transition: var(--smooth-Timing) 100ms ;
 }
 
+.home_container{
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  overflow: hidden;
+}
 
 .hamburger{
     display: none;
@@ -76,7 +89,7 @@ body{
     color: var(--primary);
     background: var(--tertiary);
     transform: scaleX(1.01);
-    transition: 200ms ;
+    transition: 200ms;
 }
 
 .navbar ul li a.active {
@@ -87,19 +100,19 @@ body{
 
 @media only screen and (max-width:720px) {
      .header{
-        padding: 0 50px;
+        padding: 0 1rem;
 
      }
 }
 
 @media only screen and (max-width:540px) {
     .header{
-       padding: 0 20px;
+       padding: 0 0.5rem;
        
     }
 }
 
-@media only screen and (max-width:660px) {
+@media only screen and (max-width:795px) {
     .hamburger{
         display: block;
         cursor: pointer;
@@ -127,7 +140,6 @@ body{
          }
     .navbar.active{
         height: 55vh;
-
     }
     .navbar ul{
         display: block;
@@ -176,18 +188,28 @@ body{
     border-radius: 1rem;
   }
   .printer-shop {
-    background-image: url(images/background-texture.jpg); /* Optional background image with subtle texture */
     background-position: center;
     background-size: cover;
     background-color: transparent;
     padding : 50px 0;
     display: flex;
     flex-direction: row;
-    overflow-x: scroll;
+    overflow-x: hidden;
   }
   
   .printer-shop header {
     text-align: center;
+    flex-wrap: wrap;
+  }
+
+  .printer-shop .slogan_banner{
+    font-size: 10rem;
+    letter-spacing: 1rem;
+    background: linear-gradient(to left, #ec4444, var(--primary), var(--secondary), #38B0DE);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
   }
   
   .printer-shop header h1 {
@@ -222,6 +244,7 @@ body{
     font-weight: bold;
     border-radius: 5px;
     transition: background-color 0.2s ease-in-out;
+    margin-bottom: 3rem;
   }
   
   .printer-shop .call-to-action a.button:hover {
@@ -266,3 +289,54 @@ body{
     font-size: 14px;
     line-height: 1.5;
   }
+
+
+/* SLIDER LOGIC */
+
+.slider ul{
+  padding: 0;
+  list-style: none;
+  display: flex;
+  width: max-content;
+  color: white !important;
+  animation: runSlider 7.5s cubic-bezier(0,.19,1,.86) infinite;
+}
+
+.slider ul:hover{
+  animation-play-state: paused;
+  transition: 300ms ease-in-out;
+}
+
+.slider ul:hover li{
+  transition: 2000ms ease;
+  background: linear-gradient(to right, #cd6666 10%, var(--primary), #9e4a4a 90%);
+}
+.slider li {
+  background: linear-gradient(to right, #b35a5a 10%, var(--primary), #7a3939 90%);
+  width: 14rem;
+  letter-spacing: 1px;
+  font-family:Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  font-weight: 700;
+  margin-right: 1rem;
+  border-radius: 0.6rem;
+  transition: 150ms ease;
+}
+
+.slider{
+  overflow: hidden;
+}
+
+@keyframes runSlider {
+
+  from{
+      transform: translateX(0);
+  }to{
+      transform: translateX(calc(var(--liCount) * var(--liWidth) ) );
+  }
+  
+}
+

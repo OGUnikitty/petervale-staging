@@ -9,7 +9,7 @@
 </head>
 <body>
     <header class="header">
-        <div class="logo"><a href="#"><img src="./images/logo long.svg" alt=""></a></div>
+        <div class="logo"><a href="#"><img src="./images/logo long.svg" alt="Home page"></a></div>
         <div class="hamburger">
             <div class="line"></div>
             <div class="line"></div>
@@ -19,17 +19,17 @@
             <ul>
                 <li><a href='standard-order.html' class="active">ORDER</a></li>
                 <li><a href="products.html" class="">Products</a></li>
-                <li><a href="" class="">About Us</a></li>
+                <li><a href="" class="">About</a></li>
                 <li><a href="" class="">Account</a></li>
             </ul>
         </nav>
         </header>
         
         <section class="printer-shop">
-            <div class="container">
+            <div class="home_container">
               <header>
-                <img src="images/banner.svg" alt="Printer Shop Banner">
-                <h1>Bring Your Ideas to Life with Professional Printing</h1>
+                <h1 class="slogan_banner">PRINT</h1>
+                <h2>Bring Your Ideas to Life with Professional Printing</h2>
                 <p>From business cards to banners, we've got you covered.</p>
               </header>
           
@@ -37,8 +37,20 @@
                 <h2>Order Your Prints Today!</h2>
                 <a href="standard-order.html" class="button">Get a Quote</a>
               </div>
+
+              <div class="slider">
+                <ul class="service__list">
+                  <li>High-Quality</li>
+                  <li>Large Format</li>
+                  <li>Digitalised</li>
+                  <li>Design Services</li>
+                  <li>Finishing and Binding</li>
+                  <li>Fast Turnaround</li>
+                  <li>Convenient</li>
+                </ul>
           
-              <div class="services">
+              <!-- WILL WORK ON IMAGE + TEXT COMBO -->
+              <!-- <div class="services">
                 <div class="service">
                   <img src="./images/business-cards.png" alt="Business Cards">
                   <h3>Business Cards</h3>
@@ -53,21 +65,13 @@
                   <img src="images/banners.png" alt="Banners">
                   <h3>Banners</h3>
                   <p>Make a bold statement with large-format banners.</p>
-                </div>
+                </div> -->
               </div>
             </div>
+            
           </section>
 
         
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const hamburger = document.querySelector(".hamburger");
-            const navBar = document.querySelector(".navbar");
-
-            hamburger.addEventListener("click", function() {
-                navBar.classList.toggle("active");
-            });
-        });
-    </script>
+    <script src="home.js"></script>
 </body>
 </html>
