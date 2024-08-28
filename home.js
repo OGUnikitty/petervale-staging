@@ -40,3 +40,17 @@ function animateSlider(ulClassName) {
     //   easing: 'linear'
     // });
   }
+
+
+//Adjust slogan size 
+adjustFontSize(slogan_banner)
+function adjustFontSize(childElement) {
+  const parentContainer = childElement.parentElement;
+  const availableWidth = parentContainer.offsetWidth;
+
+  // Calculate desired font size based on available width (adjust divisor as needed)
+  const desiredFontSize = availableWidth / 10;
+
+  // Set the calculated font size as a custom property on the child element
+  childElement.style.setProperty('--font-size', `${desiredFontSize}px`);
+}
